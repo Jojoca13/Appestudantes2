@@ -6,73 +6,48 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="br.unicentro.appestudantes.controller.IncluiLoginController"
-            prefWidth="900.0" prefHeight="520.0"
-            style="-fx-background-image: url('/image/LOGIN.IMG.jpg'); -fx-background-size: cover; -fx-background-position: center;">
-
-    <center>
-        <StackPane BorderPane.alignment="CENTER">
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unicentro.appestudantes.controller.IncluiLoginController">
+    <children>
+        <Label fx:id="lblNomeUsuario" />
+      <BorderPane prefHeight="150.0" prefWidth="570.0">
+         <right>
+            <ImageView fitHeight="180.0" fitWidth="337.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../image/ChatGPT Image 25 de out. de 2025, 18_40_04.png" />
+               </image></ImageView>
+         </right>
+         <left>
+              <Label fx:id="lblNomeTela" alignment="CENTER_RIGHT" text="Seja Bem-vindo!" BorderPane.alignment="CENTER">
+                  <font>
+                      <Font name="Georgia" size="40.0" />
+                  </font>
+              </Label>
+         </left>
+      </BorderPane>
+        <Label text="Coloque o seu nome:">
+            <font>
+                <Font size="15.0" />
+            </font>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+        </Label>
+        <TextField fx:id="txtNomEst" prefHeight="25.0" prefWidth="547.0" />
+        <HBox prefHeight="37.0" prefWidth="600.0" spacing="10.0">
             <children>
-                <!-- Painel semi-transparente com os campos (adaptado dos fx:id e nomes do seu FXML de referência) -->
-                <VBox fx:id="loginBox"
-                      spacing="12"
-                      alignment="CENTER"
-                      padding="20"
-                      maxWidth="380"
-                      style="-fx-background-color: rgba(255,255,255,0.85); -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8,0,0,2);">
-
-                    <children>
-                        <!-- título usando o id do seu arquivo de referência -->
-                        <Label fx:id="lblNomeTela" alignment="CENTER" text="Faça seu Login:">
-                            <font>
-                                <Font size="30.0"/>
-                            </font>
-                        </Label>
-
-                        <!-- label auxiliar (preservado do seu FXML de referência) -->
-                        <Label fx:id="lblNomeUsuario" />
-
-                        <!-- rótulo "Nome" com padding como no seu FXML -->
-                        <Label text="Nome">
-                            <font>
-                                <Font size="15.0"/>
-                            </font>
-                            <padding>
-                                <Insets bottom="10.0"/>
-                            </padding>
-                        </Label>
-
-                        <!-- campo de texto com o mesmo fx:id do seu FXML de referência -->
-                        <TextField fx:id="txtNomEst" promptText="Digite seu nome" prefHeight="25.0" prefWidth="300.0"/>
-
-                        <!-- HBox dos botões; mantém o botão Confirmar com o mesmo fx:id e onAction do seu controller -->
-                        <HBox prefHeight="58.0" spacing="10.0" alignment="CENTER">
-                            <children>
-                                <Button fx:id="btnConf"
-                                        text="Confirmar"
-                                        onAction="#btnConfOnAction"
-                                        prefHeight="37.0"
-                                        prefWidth="110.0">
-                                    <padding>
-                                        <Insets bottom="10.0" right="10.0" top="10.0"/>
-                                    </padding>
-                                </Button>
-                            </children>
-                            <padding>
-                                <Insets bottom="10.0" top="10.0"/>
-                            </padding>
-                        </HBox>
-                    </children>
-
-                    <!-- padding do VBox (mantido similar ao seu FXML original) -->
+                <Button fx:id="btnConf" onAction="#btnConfOnAction" prefHeight="37.0" prefWidth="74.0" text="Confirmar">
                     <padding>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="10.0"/>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
                     </padding>
-                </VBox>
+                </Button>
+                <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#btnVoltarOnAction" prefHeight="37.0" prefWidth="74.0" text="Voltar" />
             </children>
-        </StackPane>
-    </center>
-
-</BorderPane>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="30.0" />
+    </padding>
+</VBox>
